@@ -34,6 +34,22 @@ From `selenium-tests-java`:
 mvn test
 ```
 
+## Dockerized Run
+
+From the repository root, build the test image:
+
+```powershell
+docker build -t student-form-tests .
+```
+
+Run the tests inside the container:
+
+```powershell
+docker run --rm student-form-tests
+```
+
+The container includes Maven, Java 17, and Chromium, and it runs the Selenium test suite in headless mode.
+
 ## Jenkins
 
 The workspace root includes a `Jenkinsfile` that runs the Selenium tests in headless mode and publishes Surefire reports.
