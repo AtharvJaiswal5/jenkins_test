@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Enrollment Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <p class="kicker">Campus Intake</p>
+      <h1>Student Enrollment Form</h1>
+      <p class="subtitle">Register student details, validate inputs, and preview submission instantly.</p>
+    </section>
+
+    <section class="card">
+      <form id="studentForm" novalidate>
+        <div class="grid">
+          <label>
+            First Name *
+            <input type="text" id="firstName" name="firstName" required placeholder="Aarav" />
+          </label>
+          <label>
+            Last Name *
+            <input type="text" id="lastName" name="lastName" required placeholder="Sharma" />
+          </label>
+
+          <label>
+            Email *
+            <input type="email" id="email" name="email" required placeholder="name@college.edu" />
+          </label>
+          <label>
+            Phone *
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="10 digit number" />
+          </label>
+
+          <label>
+            Date of Birth *
+            <input type="date" id="dob" name="dob" required />
+          </label>
+          <label>
+            Gender *
+            <select id="gender" name="gender" required>
+              <option value="">Select</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Non-binary</option>
+              <option>Prefer not to say</option>
+            </select>
+          </label>
+
+          <label>
+            Department *
+            <select id="department" name="department" required>
+              <option value="">Select</option>
+              <option>Computer Science</option>
+              <option>Electronics</option>
+              <option>Mechanical</option>
+              <option>Civil</option>
+              <option>Business Administration</option>
+            </select>
+          </label>
+          <label>
+            Academic Year *
+            <select id="year" name="year" required>
+              <option value="">Select</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </label>
+
+          <label class="full">
+            Address *
+            <textarea id="address" name="address" required rows="3" placeholder="Street, area, landmark"></textarea>
+          </label>
+
+          <label>
+            City *
+            <input type="text" id="city" name="city" required placeholder="Pune" />
+          </label>
+          <label>
+            State *
+            <input type="text" id="state" name="state" required placeholder="Maharashtra" />
+          </label>
+          <label>
+            ZIP Code *
+            <input type="text" id="zip" name="zip" required pattern="[0-9]{6}" placeholder="6 digit PIN" />
+          </label>
+        </div>
+
+        <fieldset>
+          <legend>Skills</legend>
+          <div class="chips">
+            <label><input type="checkbox" name="skills" value="Java" /> Java</label>
+            <label><input type="checkbox" name="skills" value="Python" /> Python</label>
+            <label><input type="checkbox" name="skills" value="Web Development" /> Web Development</label>
+            <label><input type="checkbox" name="skills" value="Data Analysis" /> Data Analysis</label>
+          </div>
+        </fieldset>
+
+        <label class="terms">
+          <input type="checkbox" id="terms" required />
+          I confirm the entered details are correct.
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="btn-primary">Submit</button>
+          <button type="reset" class="btn-ghost">Clear</button>
+        </div>
+
+        <p id="formMessage" class="message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="preview" class="preview hidden" aria-live="polite"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
